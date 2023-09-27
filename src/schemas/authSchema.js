@@ -1,0 +1,20 @@
+import { z } from "zod";
+
+export const registerSchema = z.object({
+  username: z.string({
+    required_error: "Username is required",
+  }),
+  email: z.string({ required_error: "Email is required" }).email({
+    message: "Email is invalid",
+  }),
+  password: z.string({ required_error: "Password is required" }).min(6, {
+    message: "Password must be least 6 characters",
+  }),
+});
+
+export const loginSchema = z.object({
+  username: z.string(),
+  password: z.string().min(6, {
+    message: "Password must be least 6 characters",
+  }),
+});

@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Crea un contenedor principal con flexbox para ocupar toda la altura */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Ajusta el contenido para ocupar toda la altura disponible */
+  .content {
+    flex: 1; /* Esto hace que el contenido ocupe todo el espacio vertical disponible */
+    overflow-y: auto; /* Permite desplazamiento interno si el contenido es largo */
+  }
